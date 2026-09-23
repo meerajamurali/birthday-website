@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     EDIT EVERYTHING ABOUT THIS PAGE IN THE "SETTINGS" BLOCK BELOW.
+     You do not need to touch any other part of this file.
+     ═══════════════════════════════════════════════════════════════ -->
+<script>
+const SETTINGS = {
+
+  /* ---- 1. THE BASICS ------------------------------------------- */
+  hisName:      "kannaaaa",                    // shows as "Happy Birthday, kannaaaa"
+  officialname: "Shyam",
+  yourName:     "Ponnu",                    // signs the letter
+  myofficialname: "Meera",
+  yourInitials: "MS",                        // the wax seal on the envelope
+  togetherSince: "2025-01-16",              // YYYY-MM-DD — your anniversary
+  birthdayDate:  "2002-09-24",              // YYYY-MM-DD — the night he was born
+                                            // (used for the moon-phase section)
+
+  /* ---- 2. PHOTOS ------------------------------------------------
+     Put your photo files in a folder called  photos  sitting right
+     next to this HTML file, then list the file names here.
+     Any number from 1 to 12 works.                                 */
+  photos: [
+    { src: "photos/1.jpeg", caption: "Your smile is contagious" },
+    { src: "photos/2.jpeg", caption: "My Favourite" },
+    { src: "photos/3.jpeg", caption: "that evening..." },
+    { src: "photos/4.jpeg", caption: "Those days..." },
+    { src: "photos/6.jpeg", caption: "in our 'friends' era" },
+    { src: "photos/7.jpeg", caption: "sleepy and perfect" },
+    { src: "photos/8.jpeg", caption: "I love you" },
+    { src: "photos/9.jpeg", caption: "you and me" },
+    { src: "photos/10.jpeg", caption: "one ifrontof mirror" },
+    { src: "photos/11.jpeg", caption: "Look at u.." },
+    { src: "photos/12.jpeg", caption: "your smile..." },
+    { src: "photos/13.jpeg", caption: "your creepy smile" },
+    { src: "photos/14.jpeg", caption: "My lou..." }
+    ],
+  scratchPhoto: "photos/vintage.jpeg",        // hidden under the scratch card
+
+  /* ---- 3. REASONS YOU LOVE HIM --------------------------------- */
+  reasons: [
+    { title: "You listen properly",  body: "Not the nodding kind. The kind where you remember a thing I said in passing three weeks ago and bring it back to me." },
+    { title: "You are kind when nobody is watching", body: "Which is the only measurement of kindness that has ever meant anything." },
+    { title: "You make ordinary days feel like an occasion", body: "A Tuesday call with you beats most people's holidays." },
+    { title: "Your stubbornness", body: "You have never once let me give up on something quietly." },
+    { title: "The way you say my name", body: "Slightly differently from everyone else. I noticed it on day one." },
+    { title: "You are brave about the future", body: "Distance would frighten most people off. You just started counting days instead." },
+    { title: "You let me be unimpressive", body: "Tired, boring, badly lit, mid-argument — you stay." },
+    { title: "You feel like home", body: "Even from kilometers and kilometres away." }
+  ],
+
+  /* ---- 4. THE SPIN WHEEL PRIZES (exactly 6) --------------------- */
+  prizes: [
+    "Breakfast in bed",
+    "One long kissss",
+    "A whole day,just us",
+    "I cook for you",
+    "A very long hug",
+    "anything you want"
+  ],
+
+  /* ---- 5. THE LETTER -------------------------------------------
+     Each string is one paragraph.                                  */
+  letter: [
+    "I want to tell you something you may sometimes forget — I believe in you. In the person you are, the person you are becoming, and in all the small dreams you carry around quietly.",
+    "I know life is not always easy. There will be days you feel tired and unsure of yourself, days when the work does not go the way you planned. Please do not let those days convince you of anything. They are weather, not character.",
+    "You do not have to have everything figured out right now. Take your time. Make mistakes. Start again. I am not going anywhere.",
+    "And on the days you cannot believe in yourself — borrow mine. I have plenty. Happy birthday, my love."
+  ],
+
+  /* ---- 6. THE QUIZ ---------------------------------------------
+     correct: 0 = first option, 1 = second, and so on.              */
+  quiz: [
+    { q: "Where was our first date?",              a: ["Thrissur Round", "Kochi trip", "Thirumandhamkunnu Temple", "A video call, actually"], correct: 0 },
+    { q: "Which of these makes me instantly happy?", a: ["Rain", "Filter coffee", "You calling with no reason", "All of the above"], correct: 3 },
+    { q: "What is my comfort food?",                a: ["Kappa and meen curry", "Biryani", "Maggi at 2am", "Dosa"], correct: 2 },
+    { q: "Who is my favourite person in the whole world?", a: ["You", "You", "You", "All of the above"], correct: 3 },
+    { q: "When was our first kiss?",                a: ["February", "March", "I don't know", "June"], correct: 3 },
+    { q: "What do I like most about you?",          a: ["Your face", "Your laugh", "Your stubbornness", "The way you say my name"], correct: 3 }
+  ],
+
+  /* ---- 7. THE PLAYLIST ------------------------------------------
+     Paste normal YouTube links.                                    */
+  playlist: [
+    { title: "Bumbadiga", artist: "Vedan",            note: "I asked you your favourite song and you mentioned this one.", url: "https://youtu.be/X1twu3ztkPU?si=LMYHhaGzPpEcb5BV" },
+    { title: "Konji Konji",          artist: "Shankar Mahadevan", note: "You like this one when I sing.",                           url: "https://youtu.be/Vrgo6MG_VKQ?si=8uC6Kkp2kVA_KhHA" },
+    { title: "Neeyen Vennilaa",       artist: "Hari Charan",       note: "This song reminds me of you.",                               url: "https://youtu.be/znN_dSo7kEE?si=FJthjgqjwqjpIxIy" }
+  ],
+
+  /* ---- 8. THE LAST LINE ----------------------------------------- */
+  closing: "Happy birthday. Cant't wait to see you ."
+};
+</script>
+
+<style>
+/* ── tokens ─────────────────────────────────────────────────────── */
+:root{
+  --wine:#8E1538;
+  --rose:#E04A72;
+  --petal:#FFD9E3;
+  --blush:#FFF2F5;
+  --paper:#FFFFFF;
+  --ink:#3E1F2B;
+  --muted:#8A6874;
+  --gold:#C9973F;
+  --line:#F3D3DC;
+  --shadow:rgba(142,21,56,.10);
+
+ --f-display: "Pacifico", cursive;
+
+--f-hand: "Dancing Script", "Caveat", cursive;
+
+--f-ui: "Karla", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --wrap:min(680px,100% - 2.5rem);
+  --r:22px;
+
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --wine:#FFB3C8; --rose:#FF7EA0; --petal:#4A1B2D; --blush:#1E0D14;
+    --paper:#2A1220; --ink:#FBE8EE; --muted:#C79AAB; --gold:#E8C27A;
+    --line:#4A2333; --shadow:rgba(0,0,0,.45);
+  }
+}
+:root[data-theme="dark"]{
+  --wine:#FFB3C8; --rose:#FF7EA0; --petal:#4A1B2D; --blush:#1E0D14;
+  --paper:#2A1220; --ink:#FBE8EE; --muted:#C79AAB; --gold:#E8C27A;
+  --line:#4A2333; --shadow:rgba(0,0,0,.45);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:inherit}
+
+body{
+  margin:0; background:var(--blush); color:var(--ink);
+  font-family:var(--f-ui); font-size:17px; line-height:1.65;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:3px solid var(--rose);outline-offset:3px;border-radius:6px}
+
+/* ── falling hearts ─────────────────────────────────────────────── */
+#petals{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+
+/* ── layout ─────────────────────────────────────────────────────── */
+main{position:relative;z-index:1}
+section{width:var(--wrap);margin:0 auto;padding:4.5rem 0}
+.card{
+  background:var(--paper);border-radius:var(--r);
+  padding:2rem 1.6rem;box-shadow:0 18px 44px -28px var(--shadow);
+  border:1px solid var(--line);
+}
+h2{
+  font-family:var(--f-display);font-weight:900;font-size:clamp(1.7rem,6.5vw,2.5rem);
+  line-height:1.1;margin:0 0 .5rem;color:var(--wine);letter-spacing:-.02em;
+}
+.sub{color:var(--muted);margin:0 0 2rem;max-width:46ch}
+.center{text-align:center}
+.center .sub{margin-inline:auto}
+
+.btn{
+  display:inline-block;background:var(--wine);color:#fff;
+  padding:.9rem 2rem;border-radius:999px;font-weight:700;
+  box-shadow:0 12px 26px -14px var(--wine);
+  transition:transform .15s ease, filter .15s ease;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.97)}
+.btn[disabled]{opacity:.45;cursor:default}
+.btn-ghost{background:transparent;color:var(--wine);border:1.5px solid var(--line);box-shadow:none}
+
+/* ── hero ───────────────────────────────────────────────────────── */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding:3rem 0}
+.hero h1{
+  font-family:var(--f-display);font-weight:900;
+  font-size:clamp(3rem,15vw,5.4rem);line-height:.92;
+  margin:0 0 1.2rem;color:var(--wine);letter-spacing:-.045em;
+}
+.hero h1 .nm{display:block;font-style:italic;font-weight:600}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:26ch;margin:0 0 2.4rem}
+#wishOut{font-family:var(--f-hand);font-size:1.6rem;color:var(--wine);margin-top:1.2rem;min-height:2.2rem}
+
+.cake{width:132px;margin:0 0 2rem}
+.flame{transform-origin:50% 100%;animation:flick 1.1s ease-in-out infinite alternate}
+@keyframes flick{from{transform:scale(1) translateY(0)}to{transform:scale(1.14) translateY(-2px)}}
+.blown .flame{opacity:0;transition:opacity .5s}
+.smoke{opacity:0}
+.blown .smoke{animation:smk 2s ease-out forwards}
+@keyframes smk{0%{opacity:.6;transform:translateY(0)}100%{opacity:0;transform:translateY(-34px)}}
+
+/* ── carousel ───────────────────────────────────────────────────── */
+.frame{position:relative;background:var(--paper);border:1px solid var(--line);
+  border-radius:20px;padding:14px 14px 0;box-shadow:0 22px 50px -30px var(--shadow)}
+.stage{position:relative;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--petal)}
+.stage img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:opacity .45s}
+.stage img.on{opacity:1}
+.ph{position:absolute;inset:0;display:grid;place-content:center;text-align:center;
+  color:var(--wine);font-family:var(--f-hand);font-size:1.25rem;padding:2rem;gap:.4rem}
+.cap{font-family:var(--f-hand);font-size:1.45rem;color:var(--wine);text-align:center;padding:.7rem 0 1rem}
+.nav{position:absolute;top:calc(50% - 22px);width:44px;height:44px;border-radius:50%;
+  background:var(--paper);box-shadow:0 6px 18px -6px var(--shadow);display:grid;place-content:center;
+  color:var(--wine);font-size:1.3rem;z-index:2;border:1px solid var(--line)}
+.nav.prev{left:-10px}.nav.next{right:-10px}
+.dots{display:flex;gap:7px;justify-content:center;margin-top:1rem}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--rose);width:22px;border-radius:99px}
+
+/* ── counter ────────────────────────────────────────────────────── */
+.clock{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:.5rem}
+.unit{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1rem .4rem;text-align:center}
+.unit b{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(1.5rem,7vw,2.2rem);
+  color:var(--wine);line-height:1;font-variant-numeric:tabular-nums}
+.unit span{font-size:.68rem;letter-spacing:.12em;color:var(--muted)}
+
+/* ── reasons ────────────────────────────────────────────────────── */
+.reasons{list-style:none;margin:0;padding:0;counter-reset:r}
+.reasons li{counter-increment:r;padding:1.3rem 0;border-top:1px solid var(--line);display:flex;gap:1.1rem}
+.reasons li::before{content:counter(r,decimal-leading-zero);font-family:var(--f-display);
+  font-weight:600;color:var(--rose);font-size:.95rem;padding-top:.3rem;flex:0 0 1.8rem}
+.reasons h3{margin:0 0 .25rem;font-family:var(--f-display);font-weight:600;font-size:1.12rem;color:var(--ink)}
+.reasons p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* ── wheel ──────────────────────────────────────────────────────── */
+.wheelbox{position:relative;width:min(300px,82vw);margin:1rem auto 1.6rem}
+.wheelbox::before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  border-left:12px solid transparent;border-right:12px solid transparent;
+  border-top:20px solid var(--wine);z-index:3}
+#wheel{width:100%;border-radius:50%;box-shadow:0 0 0 10px var(--paper),0 0 0 12px var(--line),0 24px 50px -26px var(--shadow);
+  transition:transform 5s cubic-bezier(.16,.84,.26,1)}
+.hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;
+  background:var(--wine);color:#fff;display:grid;place-content:center;font-size:1.3rem;z-index:2;
+  box-shadow:0 6px 16px -6px var(--wine)}
+#prize{margin-top:1.4rem;opacity:0;transform:translateY(8px);transition:.4s}
+#prize.on{opacity:1;transform:none}
+#prize .lbl{font-size:.72rem;letter-spacing:.14em;color:var(--muted)}
+#prize .val{font-family:var(--f-display);font-weight:900;font-size:1.5rem;color:var(--wine);margin-top:.2rem}
+
+/* ── envelope + letter ──────────────────────────────────────────── */
+.env{width:min(300px,80vw);margin:0 auto;aspect-ratio:3/2;position:relative;
+  background:linear-gradient(160deg,var(--rose),var(--wine));border-radius:12px;
+  box-shadow:0 24px 50px -26px var(--shadow);display:grid;place-content:center;transition:transform .2s}
+.env:hover{transform:translateY(-4px)}
+.env::before{content:"";position:absolute;inset:0;border-radius:12px;
+  background:linear-gradient(to bottom right,rgba(255,255,255,.18) 49.5%,transparent 50%)}
+.seal{width:62px;height:62px;border-radius:50%;background:var(--gold);color:#fff;z-index:2;
+  display:grid;place-content:center;font-family:var(--f-display);font-weight:900;font-size:1.5rem;
+  box-shadow:0 6px 16px -6px rgba(0,0,0,.4)}
+dialog{border:0;padding:0;background:transparent;max-width:min(540px,92vw);width:100%}
+dialog::backdrop{background:rgba(62,31,43,.6);backdrop-filter:blur(3px)}
+.sheet{background:var(--paper);border-radius:18px;padding:2.4rem 1.7rem;max-height:82vh;overflow-y:auto;
+  background-image:repeating-linear-gradient(var(--paper) 0 37px,var(--line) 37px 38px)}
+.sheet p{font-family:var(--f-hand);font-size:1.42rem;line-height:38px;margin:0 0 1.2rem;color:var(--ink)}
+.sign{text-align:right;font-family:var(--f-hand);font-size:1.6rem;color:var(--wine)}
+.x{position:absolute;top:.6rem;right:.9rem;font-size:1.6rem;color:var(--muted);z-index:4}
+
+/* ── forms ──────────────────────────────────────────────────────── */
+.field{width:100%;padding:.85rem 1.1rem;border-radius:14px;border:1.5px solid var(--line);
+  background:var(--blush);color:var(--ink);font:inherit;margin-bottom:.7rem}
+.field::placeholder{color:var(--muted)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:1.2rem 0 .6rem}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--wine));transition:width .35s}
+#calcMsg{font-size:.9rem;color:var(--muted);min-height:1.4rem}
+.score{width:150px;height:150px;border-radius:50%;margin:1.4rem auto .8rem;
+  display:grid;place-content:center;background:var(--petal);color:var(--wine);
+  font-family:var(--f-display);font-weight:900;font-size:2.6rem;border:2px solid var(--rose)}
+
+/* ── quiz ───────────────────────────────────────────────────────── */
+.opt{display:flex;gap:.9rem;align-items:center;width:100%;text-align:left;
+  padding:.9rem 1.1rem;border:1.5px solid var(--line);border-radius:16px;margin-bottom:.6rem;
+  background:var(--paper);transition:.15s}
+.opt:hover{border-color:var(--rose)}
+.opt b{flex:0 0 26px;height:26px;border-radius:50%;background:var(--petal);color:var(--wine);
+  display:grid;place-content:center;font-size:.8rem;font-weight:700}
+.opt.right{border-color:#2E9E6B;background:rgba(46,158,107,.08)}
+.opt.right b{background:#2E9E6B;color:#fff}
+.opt.wrong{border-color:var(--rose);opacity:.6}
+.pill{display:inline-block;font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.8rem}
+
+/* ── scratch ────────────────────────────────────────────────────── */
+.scratchwrap{position:relative;aspect-ratio:1/1;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 22px 50px -30px var(--shadow);touch-action:none}
+.scratchwrap img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.scratchwrap .ph{background:var(--petal)}
+#scratch{position:absolute;inset:0;width:100%;height:100%;cursor:grab}
+
+/* ── playlist ───────────────────────────────────────────────────── */
+.track{display:flex;gap:1rem;align-items:center;padding:.9rem;border:1px solid var(--line);
+  border-radius:18px;margin-bottom:.7rem;background:var(--paper);text-decoration:none;color:inherit}
+.track .disc{flex:0 0 46px;height:46px;border-radius:50%;background:var(--wine);color:#fff;
+  display:grid;place-content:center;font-size:1.1rem}
+.track h3{margin:0;font-size:1rem;font-weight:700}
+.track small{color:var(--muted)}
+.track em{display:block;font-family:var(--f-hand);font-size:1.15rem;color:var(--rose);font-style:normal}
+
+/* ── moon ───────────────────────────────────────────────────────── */
+.moonbox{display:flex;gap:1.6rem;align-items:center;flex-wrap:wrap}
+#moon{flex:0 0 130px}
+.moonbox div{flex:1 1 200px}
+
+/* ── gallery ────────────────────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.6rem}
+.grid figure{margin:0;aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--petal);position:relative}
+.grid img{width:100%;height:100%;object-fit:cover}
+.grid .ph{font-size:.95rem}
+
+/* ── closing ────────────────────────────────────────────────────── */
+.end{text-align:center;padding:6rem 0 7rem}
+.end p{font-family:var(--f-hand);font-size:clamp(1.8rem,8vw,3rem);color:var(--wine);line-height:1.25;margin:0}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+
+<body>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="cake" viewBox="0 0 120 120" aria-hidden="true" id="cake">
+      <ellipse class="smoke" cx="60" cy="26" rx="4" ry="7" fill="var(--muted)"/>
+      <path class="flame" d="M60 20c5 5 7 8 7 12a7 7 0 0 1-14 0c0-4 2-7 7-12z" fill="#F7B733"/>
+      <rect x="57" y="32" width="6" height="16" rx="3" fill="var(--paper)" stroke="var(--line)"/>
+      <rect x="22" y="48" width="76" height="22" rx="8" fill="var(--rose)"/>
+      <rect x="16" y="68" width="88" height="30" rx="10" fill="var(--wine)"/>
+      <path d="M22 52q10 10 20 0t20 0 20 0" stroke="var(--petal)" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </svg>
+    <h1>Happy birthday,<span class="nm" id="heroName">you</span></h1>
+    <p>Today we celebrate the most amazing person in my life  </p>
+    <div><button class="btn" id="wishBtn">Make a wish</button></div>
+    <div id="wishOut" aria-live="polite"></div>
+  </section>
+
+  <!-- CAROUSEL -->
+  <section>
+    <h2>Proof</h2>
+    <p class="sub">Swipe, or use the arrows.</p>
+    <div class="frame">
+      <div class="stage" id="stage"></div>
+      <div class="cap" id="cap"></div>
+      <button class="nav prev" id="prev" aria-label="Previous photo">‹</button>
+      <button class="nav next" id="next" aria-label="Next photo">›</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- COUNTER -->
+  <section>
+    <h2>Every moment with you</h2>
+    <p class="sub" id="sinceLine"></p>
+    <div class="clock" id="clock"></div>
+  </section>
+
+  <!-- REASONS -->
+  <section>
+    <h2 id="reasonsHead">Things I love about you</h2>
+    <p class="sub">A short list of a very long list.</p>
+    <ol class="reasons" id="reasons"></ol>
+  </section>
+
+  <!-- WHEEL -->
+  <section class="center">
+    <h2>Spin for your surprise</h2>
+    <p class="sub">Six things could happen next. Only one of them will.</p>
+    <div class="wheelbox">
+      <svg id="wheel" viewBox="0 0 200 200" aria-hidden="true"></svg>
+      <div class="hub">♥</div>
+    </div>
+    <button class="btn" id="spinBtn">Spin</button>
+    <div id="prize" aria-live="polite">
+      <div class="lbl">I owe you this when I get there</div>
+      <div class="val" id="prizeText"></div>
+    </div>
+  </section>
+
+  <!-- LETTER -->
+  <section class="center">
+    <h2>A letter, sealed</h2>
+    <p class="sub">Open it when you have a quiet minute.</p>
+    <button class="env" id="envBtn" aria-label="Open the letter">
+      <span class="seal" id="seal">M</span>
+    </button>
+    <dialog id="letterDlg">
+      <div style="position:relative">
+        <button class="x" id="closeLetter" aria-label="Close">×</button>
+        <div class="sheet" id="sheet"></div>
+      </div>
+    </dialog>
+  </section>
+
+  <!-- COMPATIBILITY -->
+  <section>
+    <div class="card">
+      <h2 style="font-size:1.6rem">Compatibility calculator</h2>
+      <p class="sub" style="margin-bottom:1.2rem">Scientifically unreliable. Emotionally accurate.</p>
+      <input class="field" id="n1" placeholder="Your name" autocomplete="off">
+      <input class="field" id="n2" placeholder="His name" autocomplete="off">
+      <button class="btn" id="calcBtn" style="width:100%">Calculate</button>
+      <div class="bar"><i id="barFill"></i></div>
+      <div id="calcMsg"></div>
+      <div id="calcOut" hidden class="center">
+        <div class="score" id="scoreCircle">—</div>
+        <strong id="verdict"></strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section>
+    <h2>How well do you know me</h2>
+    <p class="sub">No pressure. There is absolutely pressure.</p>
+    <div class="card" id="quizCard">
+      <div class="pill" id="qCount"></div>
+      <h3 id="qText" style="font-family:var(--f-display);font-size:1.35rem;margin:0 0 1.2rem;color:var(--wine)"></h3>
+      <div id="qOpts"></div>
+      <button class="btn" id="qNext" style="width:100%;margin-top:.6rem" hidden>Next question</button>
+    </div>
+    <div class="card center" id="quizDone" hidden>
+      <div class="score" id="quizScore"></div>
+      <strong id="quizVerdict" style="font-family:var(--f-display);font-size:1.3rem;color:var(--wine)"></strong>
+      <p class="sub" style="margin:.8rem auto 0" id="quizLine"></p>
+      <button class="btn btn-ghost" id="quizAgain" style="margin-top:1rem">Try again</button>
+    </div>
+  </section>
+
+  <!-- SCRATCH -->
+  <section>
+    <h2>Scratch to see it</h2>
+    <p class="sub">Use your finger. It is worth it.</p>
+    <div class="scratchwrap" id="scratchwrap">
+      <div class="ph">the hidden photo goes here</div>
+      <img id="scratchImg" alt="A hidden photo of us">
+      <canvas id="scratch"></canvas>
+    </div>
+  </section>
+
+  <!-- PLAYLIST -->
+  <section>
+    <h2>Your birthday playlist</h2>
+    <p class="sub">Three tracks. Headphones on.</p>
+    <div id="playlist"></div>
+  </section>
+
+  <!-- MOON -->
+  <section>
+    <div class="card">
+      <h2 style="font-size:1.6rem">The moon that night</h2>
+      <p class="sub" style="margin-bottom:1.4rem" id="moonSub"></p>
+      <div class="moonbox">
+        <svg id="moon" viewBox="0 0 100 100" aria-hidden="true"></svg>
+        <div>
+          <strong id="moonPhase" style="font-family:var(--f-display);font-size:1.25rem;color:var(--wine)"></strong>
+          <p style="color:var(--muted);margin:.4rem 0 0;font-size:.95rem" id="moonNote"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section>
+    <h2>Us, collected</h2>
+    <p class="sub">Everything in one place, the way I keep it in my head.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <div class="end"><p id="closing"></p></div>
+</main>
+
+<script>
+(() => {
+const S = SETTINGS, $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+
+/* helper: <img> that falls back to the pink placeholder if the file is missing */
+function photoInto(box, src, alt, phText){
+  const ph = document.createElement("div");
+  ph.className = "ph"; ph.textContent = phText;
+  box.appendChild(ph);
+  if(!src) return;
+  const im = document.createElement("img");
+  im.alt = alt; im.loading = "lazy";
+  im.onload = () => { ph.remove(); im.classList.add("on"); };
+  im.onerror = () => im.remove();
+  im.src = src; box.appendChild(im);
+  return im;
+}
+
+/* ── falling hearts ──────────────────────────────────────────── */
+(function hearts(){
+  const c = $("#petals"), x = c.getContext("2d");
+  let w, h, items = [];
+  const resize = () => {
+    w = c.width = innerWidth * devicePixelRatio;
+    h = c.height = innerHeight * devicePixelRatio;
+    x.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  };
+  resize(); addEventListener("resize", resize);
+  const N = innerWidth < 600 ? 16 : 28;
+  for(let i=0;i<N;i++) items.push({
+    x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+    s:6+Math.random()*10, v:.25+Math.random()*.7,
+    d:Math.random()*Math.PI*2, r:Math.random()*Math.PI, o:.12+Math.random()*.3
+  });
+  function heart(px,py,size,rot,alpha){
+    x.save(); x.translate(px,py); x.rotate(rot); x.scale(size/20,size/20);
+    x.globalAlpha = alpha; x.fillStyle = "#E04A72"; x.beginPath();
+    x.moveTo(0,6); x.bezierCurveTo(-10,-4,-6,-14,0,-8);
+    x.bezierCurveTo(6,-14,10,-4,0,6); x.fill(); x.restore();
+  }
+  (function loop(){
+    x.clearRect(0,0,innerWidth,innerHeight);
+    for(const p of items){
+      heart(p.x,p.y,p.s,p.r,p.o);
+      if(!reduce){ p.y += p.v; p.x += Math.sin(p.d += .012)*.5; p.r += .006; }
+      if(p.y > innerHeight+20){ p.y = -20; p.x = Math.random()*innerWidth; }
+    }
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ── hero ─────────────────────────────────────────────────────── */
+$("#heroName").textContent = S.hisName;
+$("#reasonsHead").textContent = "Things I love about you";
+$("#closing").textContent = S.closing;
+$("#seal").textContent = S.yourInitials;
+document.title = "Happy Birthday, " + S.hisName;
+
+$("#wishBtn").addEventListener("click", e => {
+  $("#cake").classList.add("blown");
+  $("#wishOut").textContent = "Wish made. I am not telling you mine.";
+  e.target.disabled = true;
+  confetti();
+});
+
+function confetti(){
+  if(reduce) return;
+  const cv = document.createElement("canvas");
+  Object.assign(cv.style,{position:"fixed",inset:0,width:"100%",height:"100%",
+    pointerEvents:"none",zIndex:50});
+  document.body.appendChild(cv);
+  const x = cv.getContext("2d");
+  cv.width = innerWidth; cv.height = innerHeight;
+  const cols = ["#E04A72","#8E1538","#C9973F","#FFD9E3","#fff"];
+  const bits = Array.from({length:110}, () => ({
+    x:innerWidth/2, y:innerHeight*.45,
+    vx:(Math.random()-.5)*13, vy:-6-Math.random()*11,
+    s:4+Math.random()*7, c:cols[(Math.random()*cols.length)|0], r:Math.random()*6
+  }));
+  let t = 0;
+  (function f(){
+    x.clearRect(0,0,cv.width,cv.height);
+    bits.forEach(b => {
+      b.x+=b.vx; b.y+=b.vy; b.vy+=.32; b.vx*=.99; b.r+=.13;
+      x.save(); x.translate(b.x,b.y); x.rotate(b.r);
+      x.fillStyle=b.c; x.fillRect(-b.s/2,-b.s/2,b.s,b.s*.6); x.restore();
+    });
+    if(++t < 190) requestAnimationFrame(f); else cv.remove();
+  })();
+}
+
+/* ── carousel ─────────────────────────────────────────────────── */
+(function carousel(){
+  const stage = $("#stage"), dots = $("#dots"), P = S.photos;
+  let i = 0;
+  const imgs = P.map((p,k) => {
+    const box = document.createElement("div");
+    Object.assign(box.style,{position:"absolute",inset:"0",opacity:"0",transition:"opacity .45s"});
+    photoInto(box, p.src, p.caption, "photo " + (k+1));
+    stage.appendChild(box);
+    const d = document.createElement("i"); dots.appendChild(d);
+    return box;
+  });
+  function show(n){
+    i = (n + P.length) % P.length;
+    imgs.forEach((b,k) => b.style.opacity = k===i ? "1" : "0");
+    $$("#dots i").forEach((d,k) => d.classList.toggle("on", k===i));
+    $("#cap").textContent = P[i].caption || "";
+  }
+  $("#prev").onclick = () => show(i-1);
+  $("#next").onclick = () => show(i+1);
+  let sx = null;
+  stage.addEventListener("touchstart", e => sx = e.touches[0].clientX, {passive:true});
+  stage.addEventListener("touchend", e => {
+    if(sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 45) show(i + (dx < 0 ? 1 : -1));
+    sx = null;
+  });
+  show(0);
+})();
+
+/* ── time together ────────────────────────────────────────────── */
+(function counter(){
+  const start = new Date(S.togetherSince + "T00:00:00");
+  $("#sinceLine").textContent = "Since " + start.toLocaleDateString("en-GB",
+    {day:"numeric",month:"long",year:"numeric"}) + ", and counting.";
+  const box = $("#clock");
+  const labels = ["YEARS","MONTHS","DAYS","HOURS","MINUTES","SECONDS"];
+  box.innerHTML = labels.map(l =>
+    `<div class="unit"><b>0</b><span>${l}</span></div>`).join("");
+  const outs = $$("#clock b");
+  function tick(){
+    const now = new Date();
+    let y = now.getFullYear() - start.getFullYear();
+    let m = now.getMonth() - start.getMonth();
+    let d = now.getDate() - start.getDate();
+    if(d < 0){ m--; d += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+    if(m < 0){ y--; m += 12; }
+    const v = [y, m, d, now.getHours(), now.getMinutes(), now.getSeconds()];
+    v.forEach((n,k) => outs[k].textContent = String(n).padStart(2,"0"));
+  }
+  tick(); setInterval(tick, 1000);
+})();
+
+/* ── reasons ──────────────────────────────────────────────────── */
+$("#reasons").innerHTML = S.reasons
+  .map(r => `<li><div><h3>${r.title}</h3><p>${r.body}</p></div></li>`).join("");
+
+/* ── wheel ────────────────────────────────────────────────────── */
+(function wheel(){
+  const P = S.prizes, n = P.length, svg = $("#wheel");
+  const cols = ["#E04A72","#F5A65B","#7BC48A","#67B6D9","#A98BD4","#F2CB55"];
+  const step = 360/n;
+  let out = "";
+  for(let k=0;k<n;k++){
+    const a0 = (k*step-90)*Math.PI/180, a1 = ((k+1)*step-90)*Math.PI/180;
+    out += `<path d="M100 100 L${100+96*Math.cos(a0)} ${100+96*Math.sin(a0)}
+      A96 96 0 0 1 ${100+96*Math.cos(a1)} ${100+96*Math.sin(a1)} Z" fill="${cols[k%6]}"/>`;
+    const am = (k*step + step/2 - 90)*Math.PI/180;
+    out += `<text x="${100+60*Math.cos(am)}" y="${100+60*Math.sin(am)}" fill="#fff"
+      font-size="7" font-family="Karla,sans-serif" font-weight="700" text-anchor="middle"
+      transform="rotate(${k*step+step/2} ${100+60*Math.cos(am)} ${100+60*Math.sin(am)})"
+      >${P[k].slice(0,18)}</text>`;
+  }
+  svg.innerHTML = out;
+  let turns = 0;
+  $("#spinBtn").addEventListener("click", () => {
+    const btn = $("#spinBtn");
+    btn.disabled = true; btn.textContent = "Spinning…";
+    $("#prize").classList.remove("on");
+    const pick = Math.floor(Math.random()*n);
+    turns += 6 + Math.floor(Math.random()*3);
+    const angle = turns*360 - (pick*step + step/2);
+    svg.style.transform = `rotate(${angle}deg)`;
+    setTimeout(() => {
+      $("#prizeText").textContent = P[pick];
+      $("#prize").classList.add("on");
+      btn.disabled = false; btn.textContent = "Spin again";
+    }, reduce ? 50 : 5100);
+  });
+})();
+
+/* ── letter ───────────────────────────────────────────────────── */
+(function letter(){
+  $("#sheet").innerHTML = S.letter.map(p => `<p>${p}</p>`).join("")
+    + `<div class="sign">— ${S.yourName}</div>`;
+  const dlg = $("#letterDlg");
+  $("#envBtn").onclick = () => dlg.showModal();
+  $("#closeLetter").onclick = () => dlg.close();
+  dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close(); });
+})();
+
+/* ── compatibility ────────────────────────────────────────────── */
+(function compat(){
+  const msgs = ["Checking laugh frequencies…","Evaluating dance move compatibility…",
+    "Analysing sock matching abilities…","Cross-referencing snack preferences…",
+    "Measuring distance. Ignoring it.","Consulting the stars, briefly…"];
+  $("#calcBtn").addEventListener("click", () => {
+    const a = $("#n1").value.trim(), b = $("#n2").value.trim();
+    if(!a || !b){ $("#calcMsg").textContent = "Put both names in first."; return; }
+    let h = 0; for(const ch of (a+b).toLowerCase().replace(/\s/g,"")) h = (h*31 + ch.charCodeAt(0)) % 9973;
+    const score = 84 + (h % 16);
+    const fill = $("#barFill"); let p = 0, k = 0;
+    $("#calcOut").hidden = true;
+    $("#calcBtn").disabled = true;
+    const iv = setInterval(() => {
+      p += 14; fill.style.width = Math.min(p,100) + "%";
+      $("#calcMsg").textContent = msgs[k++ % msgs.length];
+      if(p >= 100){
+        clearInterval(iv);
+        $("#calcMsg").textContent = "";
+        $("#calcOut").hidden = false;
+        $("#scoreCircle").textContent = score + "%";
+        $("#verdict").textContent = score > 95 ? "Suspiciously perfect."
+          : score > 90 ? "Excellent compatibility." : "Very strong. Keep going.";
+        $("#calcBtn").disabled = false;
+        confetti();
+      }
+    }, reduce ? 60 : 650);
+  });
+})();
+
+/* ── quiz ─────────────────────────────────────────────────────── */
+(function quiz(){
+  const Q = S.quiz; let i = 0, score = 0, locked = false;
+  const L = ["A","B","C","D","E"];
+  function render(){
+    locked = false;
+    $("#qNext").hidden = true;
+    $("#qCount").textContent = `Question ${i+1} of ${Q.length}`;
+    $("#qText").textContent = Q[i].q;
+    $("#qOpts").innerHTML = Q[i].a.map((t,k) =>
+      `<button class="opt" data-k="${k}"><b>${L[k]}</b><span>${t}</span></button>`).join("");
+    $$("#qOpts .opt").forEach(el => el.onclick = () => pick(el));
+  }
+  function pick(el){
+  if(locked) return;
+
+  const k = +el.dataset.k;
+  const right = Q[i].correct;
+
+  // Remove previous selection
+  $$("#qOpts .opt").forEach(o => {
+    o.classList.remove("right");
+  });
+
+  // Show only the currently selected option
+  el.classList.add("right");
+
+  // Save the selected answer
+  el.dataset.selected = "true";
+  
+  // Store the answer temporarily
+  window.selectedAnswer = k;
+
+  $("#qNext").hidden = false;
+  $("#qNext").textContent =
+    i === Q.length - 1 ? "Submit Quiz" : "Next question";
+}
+ $("#qNext").onclick = () => {
+
+  // Check the selected answer before moving on
+  if(window.selectedAnswer !== undefined){
+    if(window.selectedAnswer === Q[i].correct){
+      score++;
+    }
+  }
+
+  window.selectedAnswer = undefined;
+
+  if(++i < Q.length) return render();
+    $("#quizCard").hidden = true; $("#quizDone").hidden = false;
+    $("#quizScore").textContent = score + "/" + Q.length;
+    const perfect = score === Q.length;
+    $("#quizVerdict").textContent = perfect ? "Flawless. You really do know me."
+      : score >= Q.length-2 ? "Close enough. I will allow it."
+      : "We need to talk. Affectionately.";
+    $("#quizLine").textContent = perfect
+      ? "I never doubted it for a second."
+      : "Answers are non-negotiable and I will be quizzing you again in person.";
+    if(perfect) confetti();
+  };
+  $("#quizAgain").onclick = () => {
+    i = 0; score = 0;
+    $("#quizDone").hidden = true; $("#quizCard").hidden = false; render();
+  };
+  render();
+})();
+
+/* ── scratch card ─────────────────────────────────────────────── */
+(function scratch(){
+  const wrap = $("#scratchwrap"), img = $("#scratchImg"), cv = $("#scratch");
+  const ph = wrap.querySelector(".ph");
+  img.onload = () => ph.remove();
+  img.onerror = () => img.remove();
+  img.src = S.scratchPhoto;
+
+  const x = cv.getContext("2d");
+  let painting = false, cleared = false;
+  function init(){
+    const r = wrap.getBoundingClientRect();
+    cv.width = r.width; cv.height = r.height;
+    const g = x.createLinearGradient(0,0,r.width,r.height);
+    g.addColorStop(0,"#B0234A"); g.addColorStop(1,"#8E1538");
+    x.fillStyle = g; x.fillRect(0,0,r.width,r.height);
+    x.fillStyle = "rgba(255,255,255,.85)";
+    x.font = "600 17px Karla, sans-serif"; x.textAlign = "center";
+    x.fillText("scratch here", r.width/2, r.height/2);
+    x.globalCompositeOperation = "destination-out";
+  }
+  const ready = setInterval(() => { if(wrap.clientWidth){ init(); clearInterval(ready); } }, 80);
+  addEventListener("resize", () => { if(!cleared) init(); });
+
+  const at = e => {
+    const r = cv.getBoundingClientRect(), t = e.touches ? e.touches[0] : e;
+    return [t.clientX - r.left, t.clientY - r.top];
+  };
+  function paint(e){
+    if(!painting) return;
+    e.preventDefault();
+    const [px,py] = at(e);
+    x.beginPath(); x.arc(px,py,26,0,7); x.fill();
+    check();
+  }
+  let last = 0;
+  function check(){
+    if(cleared || Date.now()-last < 400) return;
+    last = Date.now();
+    const d = x.getImageData(0,0,cv.width,cv.height).data;
+    let clear = 0;
+    for(let i=3;i<d.length;i+=400) if(d[i] < 40) clear++;
+    if(clear/(d.length/400) > .55){
+      cleared = true;
+      cv.style.transition = "opacity .7s"; cv.style.opacity = "0";
+      setTimeout(() => cv.remove(), 800);
+    }
+  }
+  const on = v => painting = v;
+  cv.addEventListener("mousedown", e => { on(true); paint(e); });
+  addEventListener("mouseup", () => on(false));
+  cv.addEventListener("mousemove", paint);
+  cv.addEventListener("touchstart", e => { on(true); paint(e); }, {passive:false});
+  cv.addEventListener("touchmove", paint, {passive:false});
+  addEventListener("touchend", () => on(false));
+})();
+
+/* ── playlist ─────────────────────────────────────────────────── */
+$("#playlist").innerHTML = S.playlist.map(t => `
+  <a class="track" href="${t.url}" target="_blank" rel="noopener">
+    <div class="disc">♪</div>
+    <div><h3>${t.title}</h3><small>${t.artist}</small><em>“${t.note}”</em></div>
+  </a>`).join("");
+
+/* ── moon phase ───────────────────────────────────────────────── */
+(function moon(){
+  const d = new Date(S.birthdayDate + "T21:00:00Z");
+  const epoch = Date.UTC(2000,0,6,18,14);          // a known new moon
+  const syn = 29.530588853;
+  let age = (((d.getTime()-epoch)/86400000) % syn + syn) % syn;
+  const frac = age/syn;                             // 0 new → .5 full → 1 new
+  const names = [[.03,"New moon"],[.22,"Waxing crescent"],[.28,"First quarter"],
+    [.47,"Waxing gibbous"],[.53,"Full moon"],[.72,"Waning gibbous"],
+    [.78,"Last quarter"],[.97,"Waning crescent"],[1,"New moon"]];
+  const phase = names.find(p => frac <= p[0])[1];
+  const lit = Math.round((1-Math.cos(2*Math.PI*frac))/2*100);
+
+  $("#moonSub").textContent = "This is what the sky looked like on "
+    + d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}) + ".";
+  $("#moonPhase").textContent = phase;
+  $("#moonNote").textContent = lit + "% lit. It has gone around roughly "
+    + Math.floor((Date.now()-d.getTime())/86400000/syn) + " more times since, waiting for me to meet you.";
+
+  // draw: dark disc + lit portion via a clipped offset circle
+  const k = Math.cos(2*Math.PI*frac);               // +1 new, -1 full
+  const off = k*44;
+  const waxing = frac < .5;
+  $("#moon").innerHTML = `
+    <defs>
+      <clipPath id="disc"><circle cx="50" cy="50" r="44"/></clipPath>
+    </defs>
+    <circle cx="50" cy="50" r="46" fill="none" stroke="var(--line)" stroke-width="2"/>
+    <circle cx="50" cy="50" r="44" fill="#F6E9C9"/>
+    <g clip-path="url(#disc)">
+      <rect x="${waxing?0:50}" y="0" width="50" height="100" fill="#2C1A24"/>
+      <ellipse cx="50" cy="50" rx="${Math.abs(off)}" ry="44"
+        fill="${(waxing ? off>0 : off<0) ? "#2C1A24" : "#F6E9C9"}"/>
+    </g>
+    <circle cx="36" cy="38" r="6" fill="#E6D5B2" opacity=".55"/>
+    <circle cx="60" cy="62" r="9" fill="#E6D5B2" opacity=".4"/>`;
+})();
+
+/* ── gallery ──────────────────────────────────────────────────── */
+$("#grid").innerHTML = "";
+S.photos.forEach((p,k) => {
+  const fig = document.createElement("figure");
+  photoInto(fig, p.src, p.caption, (k+1));
+  fig.querySelector("img")?.classList.add("on");
+  $("#grid").appendChild(fig);
+});
+
+})();
+</script>
+</body>
+</html>
